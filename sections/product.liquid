@@ -147,8 +147,8 @@
         <div class="product__content">
           <div class="form__wrapper{% unless show_buy_buttons %} form__wrapper--no-buttons{% endunless %}{% unless current_variant.available %} variant--soldout{% endunless %}" data-form-wrapper>
             <div class="form__width">
-              {% comment %} The input with name="id" submits to cart {% endcomment %}
-              <input type="hidden" name="id" value="{{ current_variant.id }}" form="{{ product_form_id }}">
+              {% comment %} The input with name="id" data-productid="{{ product.id }}" submits to cart {% endcomment %}
+              <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ current_variant.id }}" form="{{ product_form_id }}">
 
               {%- for block in section.blocks -%}
                 {%- liquid
@@ -185,7 +185,7 @@
                     {%- render 'product-price' product: product, unique: unique, block: block, block_style: block_style -%}
 
                   {%- when 'variants' -%}
-                    {%- render 'product-variant-options' product: product, unique: unique, block: block, block_style: block_style, product_form_id: product_form_id, enable_size_chart: true -%}
+                    {%- render 'product-variant-options' product: product, unique: unique, block_style: block_style, product_form_id: product_form_id, enable_size_chart: true -%}
 
                   {%- when 'buttons' -%}
                     {%- render 'product-buttons' product: product, current_variant: current_variant, unique: unique, block: block, block_style: block_style, product_form_id: product_form_id -%}

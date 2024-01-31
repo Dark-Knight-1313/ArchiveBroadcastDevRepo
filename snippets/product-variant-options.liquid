@@ -313,7 +313,7 @@
       </div>
 
       <noscript>
-        <select form="{{ product_form_id }}" name="id" class="product__form__select product__form__select--hidden no-js" aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}">
+        <select form="{{ product_form_id }}" name="id" data-productid="{{ product.id }}" class="product__form__select product__form__select--hidden no-js" aria-label="{{ product.options_with_values | map: 'name' | uniq | join: ', ' }}">
           {%- for variant in product.variants -%}
             <option
               {% if variant == current_variant %}selected="selected"{% endif %}

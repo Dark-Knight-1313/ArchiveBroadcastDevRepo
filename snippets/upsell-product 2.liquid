@@ -108,7 +108,7 @@
 
             {%- if upsell_product.variants.size == 1 -%}
               {%- form 'product', upsell_product, id: product_form_id -%}
-                <input type="hidden" name="id" data-productid="{{ product.id }}" value="{{ upsell_variant.id }}">
+                <input type="hidden" name="id" value="{{ upsell_variant.id }}">
                 <div class="btn__outer">
                   <button class="product-upsell__btn"
                     type="submit"
